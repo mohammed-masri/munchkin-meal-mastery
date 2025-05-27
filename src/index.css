@@ -1,0 +1,178 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 0 0% 18%;
+
+    --card: 60 14% 96%;
+    --card-foreground: 0 0% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 18%;
+
+    --primary: 3 80% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 134 31% 51%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 39 92% 57%;
+    --accent-foreground: 0 0% 18%;
+
+    --highlight: 60 14% 96%;
+    --highlight-foreground: 0 0% 18%;
+
+    --destructive: 3 80% 59%;
+    --destructive-foreground: 0 0% 100%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 210 3% 55%; /* Updated for better contrast */
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 3 80% 59%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 18%;
+    --foreground: 0 0% 99%;
+
+    --card: 0 0% 20%;
+    --card-foreground: 0 0% 99%;
+
+    --popover: 0 0% 18%;
+    --popover-foreground: 0 0% 99%;
+
+    --primary: 3 80% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 134 31% 51%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 39 92% 57%;
+    --accent-foreground: 0 0% 18%;
+
+    --highlight: 0 0% 25%;
+    --highlight-foreground: 0 0% 99%;
+
+    --destructive: 3 80% 59%;
+    --destructive-foreground: 0 0% 100%;
+
+    --muted: 0 0% 30%;
+    --muted-foreground: 210 2% 80%; /* Updated for better contrast in dark mode */
+
+    --border: 0 0% 30%;
+    --input: 0 0% 30%;
+    --ring: 3 80% 59%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Typography Scale */
+  h1 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+
+  h4 {
+    @apply text-xl font-semibold tracking-tight;
+  }
+
+  h5 {
+    @apply text-lg font-semibold;
+  }
+
+  p {
+    @apply leading-7;
+  }
+
+  small {
+    @apply text-sm text-muted-foreground;
+  }
+}
+
+@layer components {
+  /* Card Styles */
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:scale-[1.02];
+  }
+
+  /* Button Styles */
+  .btn-hover {
+    @apply transition-all duration-200 hover:scale-105 active:scale-95;
+  }
+
+  /* Tag Styles */
+  .tag {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium transition-colors;
+  }
+
+  /* Animation Classes */
+  .fade-in {
+    @apply animate-[fadeIn_0.3s_ease-out];
+  }
+
+  .slide-in {
+    @apply animate-[slideIn_0.3s_ease-out];
+  }
+
+  /* Layout Classes */
+  .page-container {
+    @apply container mx-auto p-4 md:p-6 max-w-7xl;
+  }
+
+  .section-padding {
+    @apply py-8 md:py-12;
+  }
+
+  /* Glass Effect */
+  .glass {
+    @apply bg-background/80 backdrop-blur-sm border;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
