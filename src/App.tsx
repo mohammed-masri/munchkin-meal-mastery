@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -29,7 +28,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/nutrio/">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/menu" element={<MenuManagement />} />
@@ -40,14 +39,14 @@ const App = () => (
           <Route path="/tagging" element={<TaggingSystem />} />
           <Route path="/distribution" element={<DistributionOperations />} />
           <Route path="/guide" element={<Guide />} />
-          
+
           {/* New Nursery Management System routes */}
           <Route path="/nursery" element={<NurseryPortalIndex />} />
           <Route path="/nursery/parent" element={<ParentPortal />} />
           <Route path="/nursery/teacher" element={<TeacherPortal />} />
           <Route path="/nursery/principal" element={<PrincipalPortal />} />
           <Route path="/nursery/head-office" element={<HeadOfficePortal />} />
-          
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
